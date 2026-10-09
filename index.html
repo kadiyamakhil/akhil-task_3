@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Thiranex Task 3 - JavaScript To-Do List">
+  <title>TaskFlow | To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="todo-card" aria-labelledby="title">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">THIRANEX • TASK 3</p>
+          <h1 id="title">TaskFlow</h1>
+          <p class="subtitle">JavaScript Logic &amp; State Management</p>
+        </div>
+        <div class="task-count" aria-live="polite">
+          <strong id="remaining-count">0</strong>
+          <span>active</span>
+        </div>
+      </header>
+
+      <form id="todo-form" class="add-form">
+        <label class="sr-only" for="todo-input">Enter a task</label>
+        <input id="todo-input" type="text" maxlength="120"
+               placeholder="What needs to be done?" autocomplete="off" required>
+        <button type="submit">Add Task</button>
+      </form>
+
+      <div class="toolbar">
+        <div class="filters" role="group" aria-label="Filter tasks">
+          <button class="filter active" data-filter="all" type="button">All</button>
+          <button class="filter" data-filter="active" type="button">Active</button>
+          <button class="filter" data-filter="completed" type="button">Completed</button>
+        </div>
+        <button id="clear-completed" class="clear-btn" type="button">Clear completed</button>
+      </div>
+
+      <ul id="todo-list" class="todo-list" aria-live="polite"></ul>
+
+      <div id="empty-state" class="empty-state">
+        <div class="empty-icon">✓</div>
+        <h2>No tasks here</h2>
+        <p>Add a task above to get started.</p>
+      </div>
+
+      <footer class="app-footer">
+        <span id="total-count">0 tasks</span>
+        <button id="clear-all" type="button">Clear all</button>
+      </footer>
+    </section>
+  </main>
+
+  <script src="todo.js"></script>
+</body>
+</html>
